@@ -4,7 +4,8 @@ This is a Python Flask framework API project
 
 Integration with Flask-restplus, Flask-Cors, MySQL.
 
-[![Build Status](https://travis-ci.com/mgrstars/student-enrollment-api.svg?branch=main)](https://travis-ci.com/mgrstars/student-enrollment-api)
+[![Build Status](https://travis-ci.com/mgrstars/student-enrollment-api.svg?branch=main)](https://travis-ci.com/mgrstars/student-enrollment-api)   [![Coverage Status](https://coveralls.io/repos/github/mgrstars/student-enrollment-api/badge.svg?branch=main)](https://coveralls.io/github/mgrstars/student-enrollment-api?branch=main)  [![Maintainability](https://api.codeclimate.com/v1/badges/89a1e3beb9c4c037e069/maintainability)](https://codeclimate.com/github/mgrstars/student-enrollment-api/maintainability)
+
 
 ### Enpoints:
 
