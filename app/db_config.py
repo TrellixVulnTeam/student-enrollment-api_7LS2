@@ -38,11 +38,12 @@ def init_db():
 
 
 def init_test_db():
-    conn =  mysql.connect(host='localhost', user='root', passwd='', port='3306', database='students_tests')
+    conn =  mysql.connect(host='localhost', user='root', passwd='', port='3306', database='students')
     # url= os.getenv('DATABASE_URL')
     conn = connection()
     cursor = conn.cursor()
     cursor.execute(sql)
+    return conn
 
 def destroy_db():
     conn = connection()
