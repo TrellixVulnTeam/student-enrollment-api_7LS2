@@ -1,0 +1,29 @@
+language: python
+
+env:
+  DATABASE_URL=host="host='localhost', user='root', passwd=', port='3306', database='students'"
+  DATABASE_TEST_URL="host='localhost', user='root', passwd=', port='3306', database='students_test'"
+  APP_SETTINGS="testing"
+
+python:
+  - "3.6"
+
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls codecov nose
+
+services:
+  - mysql 
+
+
+before_script:
+  - mysql -u root -e'CREATE DATABASE students_test' 
+  - mysql -u root  < app/sql_tables.sql
+
+
+script:
+  - nosetests --with-coverage --cover-package=app app -v
+
+after_success:
+  - coveralls
+  - codecov --token=988ad9dd-098f-49d9-b274-b46f960324d5
