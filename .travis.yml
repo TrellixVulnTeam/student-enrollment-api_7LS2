@@ -17,7 +17,7 @@ services:
 
 
 before_script:
-  - mysql -u root -e'CREATE DATABASE students_test' 
+  - mysql -u root -e'CREATE DATABASE students_tests' 
 
 
 

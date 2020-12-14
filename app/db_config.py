@@ -38,7 +38,7 @@ def init_db():
 
 
 def init_test_db():
-    conn =  mysql.connect(host='localhost', user='root', passwd='', port='3306', database='students')
+    conn =  mysql.connect(host='localhost', user='root', passwd='', port='3306', database='students_tests')
     # url= os.getenv('DATABASE_URL')
     conn = connection()
     cursor = conn.cursor()
