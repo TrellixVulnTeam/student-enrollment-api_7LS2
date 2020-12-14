@@ -26,4 +26,4 @@ script:
 
 after_success:
   - coveralls
-  - codecov --token=988ad9dd-098f-49d9-b274-b46f960324d5
+  - codecov --token=b24144b0-c748-4807-9ebe-4189d48bda19

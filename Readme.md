@@ -4,6 +4,8 @@ This is a Python Flask framework API project
 
 Integration with Flask-restplus, Flask-Cors, MySQL.
 
+[![Build Status](https://travis-ci.com/mgrstars/student-enrollment-api.svg?branch=main)](https://travis-ci.com/mgrstars/student-enrollment-api)
+
 ### Enpoints:
 
 The project has a total of five endpoints
