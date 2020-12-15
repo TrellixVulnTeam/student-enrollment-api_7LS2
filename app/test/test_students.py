@@ -84,7 +84,21 @@ class TestStudents(BaseTest):
         delete = self.delete(path=path)
         self.assertEqual(delete.json['message'], "student does not exist")
         self.assertEqual(delete.status_code, 400)
-   
+    
+    def test_method_not_allowed(self):
+        """Test editing a student data using a POST request"""
+        post = self.post_students()
+        path = "/api/students/{}".format(self.student['id'])
+        data= {"nationality" : "Canada"}
+        post = self.post(path=path, auth=None, data=data)
+        self.assertEqual(post.status_code, 405)
+
+    def test_adding_students_bad_request(self):
+        """Test that a user can add new student using a POST request BAD REQUEST"""
+        data= {"County" : "Canada"}
+        path="/api/students"
+        post = self.post(path=path, auth=None, data=data)
+        self.assertEqual(post.status_code, 400)
 
     def tearDown(self):
         """This function destroys objests created during the test run"""

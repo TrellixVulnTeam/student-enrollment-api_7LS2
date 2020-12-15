@@ -49,19 +49,6 @@ def service_not_available(error):
     return jsonify(error_handler(error, message)), 503
 
 
-def forbidden(error):
-    """Return an error message if the request is forbidden"""
-    message = "Sorry, You are not allowed to do that"
-    return jsonify(error_handler(error, message)), 403
-
-
-def unauthorized(error):
-    """Unauthorsed access creds"""
-    message = "Access denied"
-    response = make_response(jsonify(error_handler(error, message)), 401)
-    return response
-
-
 def create_app(config_name='development'):
     app = Flask(__name__, instance_relative_config=True)
     app.url_map.strict_slashes = False
@@ -82,10 +69,8 @@ def create_app(config_name='development'):
     app.register_blueprint(v1)
 
     app.register_error_handler(400, bad_request)
-    app.register_error_handler(401, unauthorized)
     app.register_error_handler(404, not_found)
     app.register_error_handler(405, method_not_allowed)
-    app.register_error_handler(403, forbidden)
     app.register_error_handler(503, service_not_available)
 
     return app
