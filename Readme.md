@@ -87,10 +87,26 @@ Create a database `students` and `students_tests`
 $ flask run
 ```
 
+
+## Run the app with Docker
+
+To start the app
+```
+$ docker-compose up -d --build 
+```
+To stop the app
+```
+$ docker-compose down
+``` 
+
+To view running instances of the app
+```
+$ docker-compose ps
+```
+
 ### Setting up POSTMAN
 
 Open your postman app on your machine and import `student.postman_collection.json`
-
 
 
 ## Running tests
